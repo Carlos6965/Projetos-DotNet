@@ -1,0 +1,127 @@
+﻿@model CrudClienteCidadeEstado.Models.Cliente
+
+@{
+    ViewData["Title"] = "Editar Cliente";
+}
+
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 20px;
+        color: #333;
+    }
+
+    h1 {
+        color: #2c3e50;
+        margin-bottom: 20px;
+    }
+
+    form {
+        max-width: 500px;
+    }
+
+    .form-group {
+        margin-bottom: 15px;
+    }
+
+    label {
+        font-weight: bold;
+        display: block;
+        margin-bottom: 5px;
+    }
+
+    input[type="text"],
+    input[type="number"],
+    input[type="date"],
+    select {
+        width: 100%;
+        padding: 8px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+    }
+
+    .text-danger {
+        color: #dc3545;
+        font-size: 14px;
+    }
+
+    .btn-primary {
+        background-color: blue;
+        color: white;
+        padding: 8px 12px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+
+        .btn-primary:hover {
+            background-color: darkblue;
+        }
+
+    .back-link {
+        margin-top: 20px;
+        display: inline-block;
+        text-decoration: none;
+        color: white;
+        background-color: green;
+        padding: 8px 12px;
+        border-radius: 4px;
+    }
+
+        .back-link:hover {
+            background-color: darkgreen;
+        }
+</style>
+
+<h1>@ViewData["Title"]</h1>
+
+<h4>Cliente</h4>
+<hr />
+
+<form asp-action="Edit">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    <input type="hidden" asp-for="ClienteId" />
+
+    <div class="form-group">
+        <label asp-for="Nome"></label>
+        <input asp-for="Nome" />
+        <span asp-validation-for="Nome" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="DataNasc"></label>
+        <input asp-for="DataNasc" type="date" />
+        <span asp-validation-for="DataNasc" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Idade"></label>
+        <input asp-for="Idade" type="number" />
+        <span asp-validation-for="Idade" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Sexo"></label>
+        <input asp-for="Sexo" />
+        <span asp-validation-for="Sexo" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="CidadeId"></label>
+        <select asp-for="CidadeId" asp-items="ViewBag.CidadeId"></select>
+        <span asp-validation-for="CidadeId" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <input type="submit" value="Salvar" class="btn-primary" />
+        <a asp-action="Index" class="back-link">Voltar para a Lista</a>
+    </div>
+</form>
+
+
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

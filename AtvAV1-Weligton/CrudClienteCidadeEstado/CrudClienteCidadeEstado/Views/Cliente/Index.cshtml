@@ -1,0 +1,125 @@
+﻿@model IEnumerable<CrudClienteCidadeEstado.Models.Cliente>
+
+@{
+    ViewData["Title"] = "Lista de Clientes";
+}
+
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 20px;
+        color: #333;
+    }
+
+    h1 {
+        color: #2c3e50;
+        margin-bottom: 20px;
+    }
+
+    .create-btn {
+        display: inline-block;
+        padding: 10px 15px;
+        background-color: #28a745;
+        color: white;
+        text-decoration: none;
+        border-radius: 4px;
+        margin-bottom: 20px;
+    }
+
+        .create-btn:hover {
+            background-color: #218838;
+        }
+
+    .data-table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+
+        .data-table th,
+        .data-table td {
+            padding: 12px 15px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .data-table th {
+            background-color: #f2f2f2;
+            font-weight: bold;
+        }
+
+        .data-table tr:hover {
+            background-color: #f9f9f9;
+        }
+
+    .action-btn {
+        display: inline-block;
+        padding: 6px 12px;
+        margin: 2px;
+        border-radius: 4px;
+        text-decoration: none;
+        font-size: 14px;
+    }
+
+    .edit-btn {
+        background-color: #ffc107;
+        color: #212529;
+    }
+
+        .edit-btn:hover {
+            background-color: #e0a800;
+        }
+
+    .details-btn {
+        background-color: #17a2b8;
+        color: white;
+    }
+
+        .details-btn:hover {
+            background-color: #138496;
+        }
+
+    .delete-btn {
+        background-color: #dc3545;
+        color: white;
+    }
+
+        .delete-btn:hover {
+            background-color: #c82333;
+        }
+</style>
+
+<h1>@ViewData["Title"]</h1>
+
+<p>
+    <a asp-action="Create" class="create-btn">Adicionar Novo Cliente</a>
+</p>
+
+<table class="data-table">
+    <thead>
+        <tr>
+            <th>@Html.DisplayNameFor(model => model.Nome)</th>
+            <th>@Html.DisplayNameFor(model => model.DataNasc)</th>
+            <th>@Html.DisplayNameFor(model => model.Idade)</th>
+            <th>@Html.DisplayNameFor(model => model.Sexo)</th>
+            <th>@Html.DisplayNameFor(model => model.Cidade)</th>
+            <th>Ações</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@Html.DisplayFor(modelItem => item.Nome)</td>
+                <td>@Html.DisplayFor(modelItem => item.DataNasc)</td>
+                <td>@Html.DisplayFor(modelItem => item.Idade)</td>
+                <td>@Html.DisplayFor(modelItem => item.Sexo)</td>
+                <td>@Html.DisplayFor(modelItem => item.Cidade.CidadeId)</td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.ClienteId" class="action-btn edit-btn">Editar</a>
+                    <a asp-action="Details" asp-route-id="@item.ClienteId" class="action-btn details-btn">Detalhes</a>
+                    <a asp-action="Delete" asp-route-id="@item.ClienteId" class="action-btn delete-btn">Excluir</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

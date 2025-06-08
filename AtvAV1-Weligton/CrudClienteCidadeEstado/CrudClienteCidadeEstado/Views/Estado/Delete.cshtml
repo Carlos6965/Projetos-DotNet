@@ -1,0 +1,90 @@
+﻿@model CrudClienteCidadeEstado.Models.Estado
+
+@{
+    ViewData["Title"] = "Excluir Estado";
+}
+
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 20px;
+        color: #333;
+    }
+
+    h1 {
+        color: #c0392b;
+        margin-bottom: 20px;
+    }
+
+    h4 {
+        color: #444;
+        margin-top: 20px;
+    }
+
+    dt {
+        font-weight: bold;
+    }
+
+    dd {
+        margin-bottom: 15px;
+    }
+
+    .btn-danger {
+        background-color: #dc3545;
+        color: white;
+        border: none;
+        padding: 8px 16px;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+
+        .btn-danger:hover {
+            background-color: #c82333;
+        }
+
+    .back-btn {
+        display: inline-block;
+        margin-left: 10px;
+        background-color: gray;
+        color: white;
+        padding: 8px 12px;
+        border-radius: 4px;
+        text-decoration: none;
+    }
+
+        .back-btn:hover {
+            background-color: darkgray;
+        }
+
+    .row {
+        margin-bottom: 20px;
+    }
+</style>
+
+<h1>@ViewData["Title"]</h1>
+
+<h3>Tem certeza que deseja excluir este estado?</h3>
+<div>
+    <h4>Estado</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Sigla)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Sigla)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Nome)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Nome)
+        </dd>
+    </dl>
+
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="EstadoId" />
+        <input type="submit" value="Excluir" class="btn-danger" />
+        <a asp-action="Index" class="back-btn">Voltar para a Lista</a>
+    </form>
+</div>

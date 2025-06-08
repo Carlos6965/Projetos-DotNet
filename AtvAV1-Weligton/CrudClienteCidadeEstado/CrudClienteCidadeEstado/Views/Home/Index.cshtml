@@ -1,0 +1,56 @@
+﻿@{
+    ViewData["Title"] = "Página Principal";
+}
+
+<div class="container mt-5">
+    <div class="text-center mb-5">
+        <h1 class="fw-bold">Sistema de Cadastro</h1>
+        <p class="lead text-muted">Gerencie Estados, Cidades e Clientes com facilidade</p>
+    </div>
+
+    <div class="row g-4 justify-content-center">
+        <div class="col-md-4">
+            <div class="card h-100 shadow-lg border-0 card-hover">
+                <div class="card-body text-center">
+                    <i class="bi bi-person-lines-fill display-4 text-primary mb-3"></i>
+                    <h5 class="card-title fw-semibold">Clientes</h5>
+                    <p class="card-text">Cadastro e gerenciamento de clientes</p>
+                    <a href="/Cliente" class="btn btn-primary w-100">Acessar</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card h-100 shadow-lg border-0 card-hover">
+                <div class="card-body text-center">
+                    <i class="bi bi-building display-4 text-success mb-3"></i>
+                    <h5 class="card-title fw-semibold">Cidades</h5>
+                    <p class="card-text">Cadastro de cidades e vínculos com estados</p>
+                    <a href="/Cidade" class="btn btn-success w-100">Acessar</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card h-100 shadow-lg border-0 card-hover">
+                <div class="card-body text-center">
+                    <i class="bi bi-geo-alt-fill display-4 text-info mb-3"></i>
+                    <h5 class="card-title fw-semibold">Estados</h5>
+                    <p class="card-text">Cadastro e consulta de estados brasileiros</p>
+                    <a href="/Estado" class="btn btn-info text-white w-100">Acessar</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <style>
+        .card-hover {
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+            .card-hover:hover {
+                transform: scale(1.05);
+                box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            }
+    </style>
+}

@@ -1,0 +1,88 @@
+﻿@model CrudClienteCidadeEstado.Models.Estado
+
+@{
+    ViewData["Title"] = "Detalhes do Estado";
+}
+
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 20px;
+        color: #333;
+    }
+
+    h1 {
+        color: #2c3e50;
+        margin-bottom: 20px;
+    }
+
+    h4 {
+        color: #444;
+        margin-top: 20px;
+    }
+
+    dt {
+        font-weight: bold;
+    }
+
+    dd {
+        margin-bottom: 15px;
+    }
+
+    .btn {
+        display: inline-block;
+        padding: 8px 12px;
+        margin-right: 10px;
+        border-radius: 4px;
+        text-decoration: none;
+        font-size: 14px;
+    }
+
+    .edit-btn {
+        background-color: blue;
+        color: white;
+    }
+
+        .edit-btn:hover {
+            background-color: darkblue;
+        }
+
+    .back-btn {
+        background-color: green;
+        color: white;
+    }
+
+        .back-btn:hover {
+            background-color: darkgreen;
+        }
+
+    .row {
+        margin-bottom: 20px;
+    }
+</style>
+
+<h1>@ViewData["Title"]</h1>
+
+<div>
+    <h4>Estado</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Sigla)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Sigla)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Nome)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Nome)
+        </dd>
+    </dl>
+</div>
+
+<div>
+    <a asp-action="Edit" asp-route-id="@Model?.EstadoId" class="btn edit-btn">Editar</a>
+    <a asp-action="Index" class="btn back-btn">Voltar para a Lista</a>
+</div>

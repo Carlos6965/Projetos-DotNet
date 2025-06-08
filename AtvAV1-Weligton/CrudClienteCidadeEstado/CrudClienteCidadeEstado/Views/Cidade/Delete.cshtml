@@ -1,0 +1,100 @@
+﻿@model CrudClienteCidadeEstado.Models.Cidade
+
+@{
+    ViewData["Title"] = "Excluir Cidade";
+}
+
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 20px;
+        color: #333;
+    }
+
+    h1 {
+        color: #2c3e50;
+        margin-bottom: 10px;
+    }
+
+    h3 {
+        color: #c82333;
+        margin-bottom: 20px;
+    }
+
+    h4 {
+        margin-top: 20px;
+        color: #444;
+    }
+
+    dt {
+        font-weight: bold;
+    }
+
+    dd {
+        margin-bottom: 15px;
+    }
+
+    .form-container {
+        max-width: 500px;
+    }
+
+    .action-buttons {
+        margin-top: 20px;
+    }
+
+    .btn-delete {
+        background-color: #dc3545;
+        color: white;
+        padding: 8px 12px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+
+        .btn-delete:hover {
+            background-color: #c82333;
+        }
+
+    .btn-back {
+        background-color: gray;
+        color: white;
+        padding: 8px 12px;
+        text-decoration: none;
+        border-radius: 4px;
+        margin-left: 10px;
+    }
+
+        .btn-back:hover {
+            background-color: darkgray;
+        }
+</style>
+
+<h1>@ViewData["Title"]</h1>
+
+<h3>Tem certeza que deseja excluir esta cidade?</h3>
+
+<div class="form-container">
+    <h4>Cidade</h4>
+    <hr />
+    <dl>
+        <dt class="col-sm-3">
+            @Html.DisplayNameFor(model => model.Nome)
+        </dt>
+        <dd class="col-sm-9">
+            @Html.DisplayFor(model => model.Nome)
+        </dd>
+
+        <dt class="col-sm-3">
+            @Html.DisplayNameFor(model => model.Estado)
+        </dt>
+        <dd class="col-sm-9">
+            @Html.DisplayFor(model => model.Estado.EstadoId)
+        </dd>
+    </dl>
+
+    <form asp-action="Delete" class="action-buttons">
+        <input type="hidden" asp-for="CidadeId" />
+        <input type="submit" value="Excluir" class="btn-delete" />
+        <a asp-action="Index" class="btn-back">Cancelar</a>
+    </form>
+</div>

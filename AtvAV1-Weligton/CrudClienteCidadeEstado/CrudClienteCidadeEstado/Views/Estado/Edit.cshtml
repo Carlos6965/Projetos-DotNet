@@ -1,0 +1,114 @@
+﻿@model CrudClienteCidadeEstado.Models.Estado
+
+@{
+    ViewData["Title"] = "Editar Estado";
+}
+
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 20px;
+        color: #333;
+    }
+
+    h1 {
+        color: #2c3e50;
+        margin-bottom: 20px;
+    }
+
+    h4 {
+        color: #444;
+        margin-top: 20px;
+    }
+
+    label {
+        font-weight: bold;
+    }
+
+    .form-control {
+        width: 100%;
+        padding: 8px;
+        margin-bottom: 10px;
+        border-radius: 4px;
+        border: 1px solid #ccc;
+    }
+
+    .text-danger {
+        color: #dc3545;
+        font-size: 14px;
+    }
+
+    .btn {
+        display: inline-block;
+        padding: 8px 12px;
+        margin-right: 10px;
+        border-radius: 4px;
+        text-decoration: none;
+        font-size: 14px;
+    }
+
+    .btn-primary {
+        background-color: blue;
+        color: white;
+        border: none;
+    }
+
+        .btn-primary:hover {
+            background-color: darkblue;
+        }
+
+    .back-link {
+        margin-top: 20px;
+        display: inline-block;
+        text-decoration: none;
+        color: white;
+        background-color: green;
+        padding: 8px 12px;
+        border-radius: 4px;
+    }
+
+        .back-link:hover {
+            background-color: darkgreen;
+        }
+
+    .row {
+        margin-bottom: 20px;
+    }
+</style>
+
+<h1>@ViewData["Title"]</h1>
+
+<h4>Estado</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="EstadoId" />
+            <div class="form-group">
+                <label asp-for="Sigla" class="control-label"></label>
+                <input asp-for="Sigla" class="form-control" />
+                <span asp-validation-for="Sigla" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Nome" class="control-label"></label>
+                <input asp-for="Nome" class="form-control" />
+                <span asp-validation-for="Nome" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Salvar" class="btn btn-primary" />
+                <a asp-action="Index" class="back-link">Voltar para a Lista</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
