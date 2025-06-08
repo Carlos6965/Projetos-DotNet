@@ -1,0 +1,61 @@
+# Build results
+bin/
+obj/
+
+# User-specific files
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Visual Studio files
+.vscode/
+.vs/
+
+# ASP.NET Scaffolding
+ScaffoldingReadMe.txt
+
+# Rider IDE
+.idea/
+
+# Logs
+*.log
+
+# NuGet
+*.nupkg
+*.snupkg
+.nuget/
+
+# Entity Framework
+Migrations/
+
+# Publish
+wwwroot/dist/
+wwwroot/lib/
+*.db
+*.sqlite
+
+# Secret config files
+appsettings.Development.json
+appsettings.Local.json
+secrets.json
+
+# Dotnet specific
+project.lock.json
+project.fragment.lock.json
+artifacts/
+
+# Test Results
+TestResults/
+*.coverage
+*.coveragejson
+*.trx
+
+# npm / Node if you’re using frontend tooling
+node_modules/
+npm-debug.log
+yarn-error.log
